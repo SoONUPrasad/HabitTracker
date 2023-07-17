@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Navbar from './components/Navbar'
+import Habit from './components/Habit'
+import { useSelector } from "react-redux";
 
-function App() {
+const App = () => {
+  // Use the useSelector hook to get the state from the "habits" reducer
+  let habitsState = useSelector((state) => state["habits"]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      {/* Render the Navbar component with the name "Detail View" */}
+      <Navbar name="Detail View" />
+
+      <div className='habits'>
+        {/* Map through the habitsState array and render a Habit component for each habit */}
+        {habitsState.map((habit) => (
+          <Habit habit={habit} key={habit.id} />
+        ))}
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App
