@@ -1,3 +1,6 @@
+# Hosted Link
+you can open the this site using [https://habit-trackerapp.netlify.app/](https://habit-trackerapp.netlify.app/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
